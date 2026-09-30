@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Safe & Equal: a gender-responsive digital platform promoting awareness, equality, inclusion, empowerment and social responsibility.">
+<title>Safe & Equal | Gender Awareness in the Philippines</title>
+<style>
+:root{
+  --bg:#f7f5fb; --surface:#fff; --ink:#20202a; --muted:#666678;
+  --primary:#6d4aff; --primary2:#9a7cff; --accent:#ff5f8f; --line:#e7e3ef;
+  --shadow:0 16px 45px rgba(44,35,75,.10); --radius:22px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(247,245,251,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navin{display:flex;align-items:center;justify-content:space-between;min-height:70px}
+.logo{font-weight:900;letter-spacing:-.04em;font-size:1.25rem}.logo span{color:var(--primary)}
+.navlinks{display:flex;gap:22px;font-size:.92rem;font-weight:700;color:var(--muted)}
+.navlinks a:hover{color:var(--primary)}
+.menu{display:none;background:none;border:0;font-size:1.5rem}
+.hero{padding:92px 0 70px;background:
+ radial-gradient(circle at 85% 20%,rgba(154,124,255,.26),transparent 32%),
+ radial-gradient(circle at 15% 20%,rgba(255,95,143,.16),transparent 28%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.kicker{color:var(--primary);font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem}
+h1{font-size:clamp(2.8rem,6vw,5.2rem);line-height:.98;letter-spacing:-.065em;margin:14px 0 24px}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:650px}
+.btn{display:inline-block;margin-top:18px;padding:13px 20px;border-radius:999px;background:var(--primary);color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(109,74,255,.22)}
+.btn.alt{background:var(--surface);color:var(--primary);border:1px solid var(--line);margin-left:8px}
+.hero-card{background:var(--surface);padding:28px;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);transform:rotate(1deg)}
+.hero-card .big{font-size:4rem;font-weight:950;color:var(--primary);line-height:1}
+.pill{display:inline-block;padding:7px 11px;border-radius:999px;background:#f0ebff;color:var(--primary);font-weight:800;font-size:.8rem}
+section{padding:80px 0}.section-head{max-width:720px;margin-bottom:35px}.section-head h2{font-size:2.4rem;letter-spacing:-.04em;margin:7px 0}.section-head p{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:27px;box-shadow:0 8px 25px rgba(44,35,75,.05)}
+.stat .num{font-size:2.8rem;font-weight:950;color:var(--primary);line-height:1}.stat h3{margin:10px 0 4px}.stat p,.note{color:var(--muted);font-size:.92rem}
+.issue{background:#201c2b;color:#fff}.issue .section-head p{color:#cbc7d4}.issue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.issue .card{background:#2b2639;border-color:#413a51}.issue .card p{color:#cbc7d4}.icon{font-size:1.7rem}
+.laws{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.law h3{margin-bottom:5px}.law .year{font-size:.8rem;color:var(--accent);font-weight:900}.law p{color:var(--muted);font-size:.93rem}.law a{color:var(--primary);font-weight:800;font-size:.9rem}
+.quiz{max-width:800px;margin:auto}.question{font-size:1.3rem;font-weight:850}.options{display:grid;gap:11px;margin-top:20px}.option{border:1px solid var(--line);background:#fff;padding:14px 16px;border-radius:14px;text-align:left;cursor:pointer;font:inherit}.option:hover{border-color:var(--primary);background:#faf8ff}.feedback{margin-top:16px;padding:15px;border-radius:14px;display:none}.feedback.good{display:block;background:#eaf8ef;color:#176a39}.feedback.bad{display:block;background:#fff0f3;color:#9c2445}
+.cta{background:linear-gradient(135deg,#6d4aff,#a36bff);color:#fff;border-radius:30px;padding:50px}.cta p{color:#eee8ff;max-width:650px}.cta .btn{background:#fff;color:var(--primary)}
+.refs{display:grid;gap:12px}.refs a{color:var(--primary);font-weight:700}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.footerin{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:800px){
+ .hero-grid,.stats,.issue-grid,.laws{grid-template-columns:1fr}.hero{padding-top:65px}.navlinks{display:none}.menu{display:block}.hero-card{transform:none}.btn.alt{margin-left:0}
+}
+</style>
+</head>
+<body>
+<nav><div class="container navin">
+  <a class="logo" href="#top">SAFE<span>&</span>EQUAL</a>
+  <div class="navlinks">
+    <a href="#issue">Issue</a><a href="#stats">Data</a><a href="#laws">Laws</a><a href="#quiz">Think</a><a href="#action">Act</a>
+  </div>
+  <button class="menu" aria-label="Open menu" onclick="document.querySelector('.navlinks').style.display='flex'">☰</button>
+</div></nav>
+
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+ <div>
+  <div class="kicker">Gender & Society • Midterm Project</div>
+  <h1>Safety is a right.<br><span style="color:var(--primary)">Equality is action.</span></h1>
+  <p><b>Safe & Equal</b> is a student-made digital awareness platform focused on gender-based violence and sexual harassment in the Philippines. Learn what the issue looks like, know the laws that protect people, and turn awareness into responsible action.</p>
+  <a class="btn" href="#issue">Explore the issue</a>
+  <a class="btn alt" href="#laws">Know the laws</a>
+ </div>
+ <div class="hero-card">
+   <span class="pill">WHY THIS MATTERS</span>
+   <div class="big">14.0%</div>
+   <h3>of women aged 15–49 in the 2022 NDHS reported experiencing physical or sexual violence.</h3>
+   <p class="note">The statistic is from the Philippine Statistics Authority's 2022 National Demographic and Health Survey and is presented here for awareness—not to define every survivor's experience.</p>
+ </div>
+</div>
+</section>
+
+<section id="issue"><div class="container">
+<div class="section-head"><div class="kicker">01 • Central issue</div><h2>Gender-based violence is more than a “private problem.”</h2><p>Gender-based violence can cause physical, sexual, psychological, emotional, or economic harm. Harassment can also happen in public spaces, schools, workplaces, and online environments.</p></div>
+<div class="issue-grid">
+ <article class="card"><div class="icon">🛡️</div><h3>Recognize</h3><p>Notice unwanted sexual remarks, threats, stalking, coercion, non-consensual sharing of images, and other behavior that violates safety, dignity, or consent.</p></article>
+ <article class="card"><div class="icon">🤝</div><h3>Support</h3><p>Listen without blaming. Respect the person's choices and privacy. When immediate danger exists, prioritize safety and contact appropriate authorities or support services.</p></article>
+ <article class="card"><div class="icon">📣</div><h3>Prevent</h3><p>Challenge victim-blaming, sexist jokes, harassment, and stereotypes. Build spaces where consent, dignity, accountability, and inclusion are normal.</p></article>
+</div>
+</div></section>
+
+<section id="stats"><div class="container">
+<div class="section-head"><div class="kicker">02 • Evidence</div><h2>What the data tells us</h2><p>Statistics make the issue visible. They should be read in context and traced to their original sources.</p></div>
+<div class="stats">
+ <article class="card stat"><div class="num">14.0%</div><h3>Physical or sexual violence</h3><p>Women aged 15–49 in the 2022 NDHS who reported experiencing physical or sexual violence.</p></article>
+ <article class="card stat"><div class="num">16.1%</div><h3>Intimate partner violence</h3><p>In the latest PSA-reported NDHS results, this was the highest percentage among women aged 40–49 for physical, sexual, or emotional intimate partner violence.</p></article>
+ <article class="card stat"><div class="num">10.0%</div><h3>Recent partner violence</h3><p>About one in ten women who ever had a husband or intimate partner reported physical, sexual, or emotional violence in the previous 12 months in the 2022 NDHS.</p></article>
+</div>
+<p class="note" style="margin-top:18px">Source: Philippine Statistics Authority, National Demographic and Health Survey / Fact Sheet on Women and Men in the Philippines.</p>
+</div></section>
+
+<section id="laws" class="issue"><div class="container">
+<div class="section-head"><div class="kicker" style="color:#bbaaff">03 • Know your rights</div><h2>Philippine laws that address harassment and violence</h2><p>These laws illustrate that gender equality and personal safety are supported by legal protections—not merely social expectations.</p></div>
+<div class="laws">
+ <article class="card law"><div class="year">RA 11313 • 2019</div><h3>Safe Spaces Act</h3><p>Defines and penalizes gender-based sexual harassment in streets, public spaces, online, workplaces, and educational or training institutions.</p><a href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/90094" target="_blank">Read the law ↗</a></article>
+ <article class="card law"><div class="year">RA 9262 • 2004</div><h3>Anti-VAWC Act</h3><p>Addresses violence against women and their children, including physical, sexual, psychological, and economic abuse in covered intimate relationships.</p><a href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/22128" target="_blank">Read the law ↗</a></article>
+ <article class="card law"><div class="year">RA 7877 • 1995</div><h3>Anti-Sexual Harassment Act</h3><p>Declares sexual harassment unlawful in employment, education, and training environments and establishes duties for institutions and responsible persons.</p><a href="https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%207877" target="_blank">Read the law ↗</a></article>
+</div>
+</div></section>
+
+<section id="quiz"><div class="container quiz">
+<div class="section-head"><div class="kicker">04 • Think before you act</div><h2>Quick scenario check</h2><p>Test your understanding. Choose the response that best supports dignity, consent, and safety.</p></div>
+<div class="card">
+<div class="question">A classmate tells you someone keeps sending them unwanted sexual messages online. What is the most responsible first response?</div>
+<div class="options">
+<button class="option" onclick="answer(this,false)">“Just ignore it. It’s probably a joke.”</button>
+<button class="option" onclick="answer(this,true)">Listen, believe their account, respect their choices, and help them consider safe reporting/support options.</button>
+<button class="option" onclick="answer(this,false)">Share the messages publicly so everyone knows the sender is wrong.</button>
+<button class="option" onclick="answer(this,false)">Tell them what they should have done differently.</button>
+</div>
+<div id="feedback" class="feedback"></div>
+</div>
+</div></section>
+
+<section id="action"><div class="container"><div class="cta">
+<div class="kicker" style="color:#e4dbff">05 • Take action</div>
+<h2>Make equality part of everyday behavior.</h2>
+<p>Speak up against harassment. Respect boundaries and consent. Avoid victim-blaming. Use inclusive language. Learn the policies of your school or workplace. When someone shares an experience, respond with care rather than judgment.</p>
+<a class="btn" href="#refs">View references</a>
+</div></div></section>
+
+<section id="refs"><div class="container">
+<div class="section-head"><div class="kicker">References</div><h2>Sources & further reading</h2><p>Primary and government sources used for the statistics and legal information presented on this website.</p></div>
+<div class="card refs">
+<a href="https://psa.gov.ph/statistics/national-demographic-health-survey/node/1684083157" target="_blank">Philippine Statistics Authority — National Demographic and Health Survey results</a>
+<a href="https://psa.gov.ph/sites/default/files/phdsd/2026-Fact-Sheet-on-Women-and-Men_30Apr2026.pdf" target="_blank">Philippine Statistics Authority — 2026 Fact Sheet on Women and Men in the Philippines</a>
+<a href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/90094" target="_blank">Supreme Court E-Library — Republic Act No. 11313 (Safe Spaces Act)</a>
+<a href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/22128" target="_blank">Supreme Court E-Library — Republic Act No. 9262 (Anti-Violence Against Women and Their Children Act)</a>
+<a href="https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%207877" target="_blank">Senate Legislative Reference Bureau — Republic Act No. 7877 (Anti-Sexual Harassment Act)</a>
+<a href="https://pcw.gov.ph/faq-republic-act-no-11313/" target="_blank">Philippine Commission on Women — FAQ on the Safe Spaces Act</a>
+</div>
+<p class="note" style="margin-top:20px"><b>Academic note:</b> This site is an educational student project. It is not a substitute for legal advice or emergency assistance.</p>
+</div></section>
+</main>
+
+<footer><div class="container footerin"><div><b>SAFE & EQUAL</b> — Gender & Society Midterm Project</div><div>Group members: <b>[Name]</b> • <b>[Name]</b> • <b>[Name]</b> • <b>[Name]</b></div></div></footer>
+
+<script>
+function answer(btn, correct){
+ const box=document.getElementById('feedback');
+ document.querySelectorAll('.option').forEach(b=>b.style.borderColor='');
+ btn.style.borderColor=correct?'#27a65a':'#e25570';
+ box.className='feedback '+(correct?'good':'bad');
+ box.textContent=correct
+  ? 'Correct. A supportive response centers the person’s safety, dignity, consent, and choices. Avoid public retaliation or victim-blaming.'
+  : 'Not quite. A responsible response should avoid dismissal, public exposure, and victim-blaming. Focus on listening, safety, and informed support.';
+}
+</script>
+</body>
+</html>
