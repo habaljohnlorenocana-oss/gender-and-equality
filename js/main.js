@@ -1,4 +1,4 @@
-/* Safe & Equal — frontend logic
+ /* Safe & Equal — frontend logic
    Loads all content from the backend (/api/content) and wires up
    the menu, the quiz (/api/quiz/answer) and the pledge (/api/pledges). */
 
@@ -122,9 +122,12 @@ function renderRefs(c) {
     li.append(a);
     list.append(li);
   });
-  $("footNote").textContent = c.footer.note;
-  $("footProject").textContent = c.footer.project;
-  $("footMembers").textContent = "Group members: " + c.footer.members.join(" • ");
+  if ($("footNote")) $("footNote").textContent = c.footer.note;
+  if ($("footProject")) $("footProject").textContent = c.footer.project;
+  const fm = $("footMembers");
+  if (fm && c.footer.members && c.footer.members.length) {
+    fm.textContent = "Group members: " + c.footer.members.join(" • ");
+  }
 }
 
 /* ---------- animated numbers (runs once, skipped for reduced motion) ---------- */
@@ -231,22 +234,28 @@ function setupMenu() {
 }
 
 /* ---------- start ---------- */
+function safely(label, fn) {
+  try { return fn(); } catch (err) { console.error("Section failed:", label, err); }
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   setupMenu();
+  let content;
   try {
-    const content = await api("/api/content");
-    renderHero(content);
-    renderIssue(content);
-    renderStats(content);
-    renderLaws(content);
-    renderAction(content);
-    renderRefs(content);
-    await Promise.all([setupQuiz(), setupPledge()]);
+    content = await api("/api/content");
   } catch (err) {
     const main = document.querySelector("main");
     const note = el("p", "feedback err", "Content could not load. Please refresh the page.");
     note.style.padding = "2rem";
     main.prepend(note);
     console.error(err);
+    return;
   }
+  safely("hero", () => renderHero(content));
+  safely("issue", () => renderIssue(content));
+  safely("stats", () => renderStats(content));
+  safely("laws", () => renderLaws(content));
+  safely("action", () => renderAction(content));
+  safely("refs", () => renderRefs(content));
+  await Promise.allSettled([setupQuiz(), setupPledge()]);
 });
