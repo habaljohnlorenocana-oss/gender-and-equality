@@ -133,11 +133,6 @@ window.SITE_CONTENT = {
   "footer": {
     "note": "This site is an educational student project. It is not a substitute for legal advice or emergency assistance.",
     "project": "SAFE & EQUAL — Gender & Society Midterm Project",
-    "members": [
-      "[Name]",
-      "[Name]",
-      "[Name]",
-      "[Name]"
-    ]
+
   }
 };
