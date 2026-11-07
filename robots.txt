@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://habaljohnlorenocana-oss.github.io/gender-and-equality/sitemap.xml
